@@ -8,6 +8,10 @@ COPY redis-server_2.8.19.deb redis-server.deb
 # install from deb
 RUN dpkg -i redis-server.deb
 
+RUN apt-get upgrade
+
+RUN apt-get update
+
 # start Redis server
 CMD [ "redis-server" ]
 
